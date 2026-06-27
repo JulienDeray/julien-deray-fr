@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+
+const roles = (await getCollection('journey')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<div class="timeline fade-in">
+  {
+    roles.map(({ data }) => (
+      <div class:list={['timeline-item', { current: data.current }]}>
+        <div class="timeline-date">{data.dates}</div>
+        <div class="timeline-role">{data.role}</div>
+        <div class="timeline-company">
+          @ {data.company}
+          {data.location && <> · {data.location}</>}
+        </div>
+        {data.blurb && <p class="timeline-blurb">{data.blurb}</p>}
+      </div>
+    ))
+  }
+</div>

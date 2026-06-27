@@ -1,0 +1,32 @@
+/* ─────────────────────────────────────────────────────────────
+   Design tokens — refined dark theme, warm orange accent.
+   Everything visual references these variables; change them here.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* Accent */
+  --accent: #f0a84c;
+  --accent-dim: rgba(240, 168, 76, 0.5);
+  --accent-wash: rgba(240, 168, 76, 0.1);
+
+  /* Surfaces (dark charcoal) */
+  --bg: #141519;
+  --bg-raised: #1b1d23;
+  --bg-card: #191b21;
+
+  /* Text */
+  --text: #ededee;
+  --text-muted: #9a9ca3;
+
+  /* Lines & shape */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --radius: 12px;
+
+  /* Type */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* Layout */
+  --maxw: 760px;
+}

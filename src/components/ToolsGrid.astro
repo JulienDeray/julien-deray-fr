@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type Entry = CollectionEntry<'books'> | CollectionEntry<'methods'>;
+interface Props {
+  items: Entry[];
+}
+const { items } = Astro.props;
+---
+
+<div class="tools-grid fade-in">
+  {
+    items.map(({ data }) => (
+      <div class="tool-card">
+        <div class="tool-emoji">{data.emoji}</div>
+        <h4>{data.title}</h4>
+        {'author' in data && <div class="tool-author">{data.author}</div>}
+        <p>{data.blurb}</p>
+        <span class="tool-tag">{data.tag}</span>
+      </div>
+    ))
+  }
+</div>
