@@ -37,11 +37,15 @@ export const operate: Principle[] = [
     title: 'Continuous Improvement',
     body: 'Small, compounding gains over heroic rewrites. Measure, adjust, repeat — the boring path to high performance.',
   },
+  {
+    icon: '🌊',
+    title: 'Everything Is a Flow',
+    body: "Kanban boards, product delivery, my own to-do list, distributed systems — same physics. Little's Law and queueing theory govern all of them: limit work in progress, or wait longer for everything.",
+  },
 ];
 
 // Personal mantras.
 export const mantras: Mantra[] = [
-  { icon: '⚔️', title: 'Discipline = Freedom' },
   { icon: '🏁', title: 'Stop starting, start finishing' },
   { icon: '🪞', title: 'How you do anything is how you do everything' },
   { icon: '🎭', title: 'Ego is the enemy' },
