@@ -9,7 +9,7 @@ export const site = {
   hero: {
     role: 'Director of Engineering at SwissBorg',
     tagline:
-      'I scale engineering teams in fintech and crypto with aviation-inspired operational discipline — structured briefings, blameless debriefs, and relentless continuous improvement.',
+      'I scale engineering teams in fintech and crypto with aviation-inspired operational discipline — structured briefings, blameless debriefs, and relentless continuous improvement. Hands-on with automation across departments, driving our AI transformation strategy.',
     location: 'Lisbon, Portugal',
   },
 
