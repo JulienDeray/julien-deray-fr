@@ -1,0 +1,16 @@
+---
+interface Props {
+  id: string;
+  label: string;
+  title: string;
+}
+const { id, label, title } = Astro.props;
+---
+
+<section id={id}>
+  <div class="container">
+    <div class="section-label fade-in">{label}</div>
+    <h2 class="section-title fade-in">{title}</h2>
+    <slot />
+  </div>
+</section>

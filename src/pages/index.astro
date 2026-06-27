@@ -1,0 +1,96 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import Timeline from '../components/Timeline.astro';
+import Operate from '../components/Operate.astro';
+import ToolsGrid from '../components/ToolsGrid.astro';
+import PodcastTopics from '../components/PodcastTopics.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site';
+import { book } from '../data/book';
+
+const books = (await getCollection('books')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const methods = (await getCollection('methods')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<BaseLayout>
+  <Nav />
+  <Hero />
+
+  <Section id="journey" label="Career" title="My Journey">
+    <Timeline />
+    <p style="margin-top:2.5rem;" class="fade-in">
+      <a href={site.resumeUrl} class="btn" target="_blank" rel="noopener">
+        📄 Download résumé
+      </a>
+    </p>
+  </Section>
+
+  <Section id="operate" label="Philosophy" title="How I Operate">
+    <p class="section-intro fade-in">
+      I borrow my operating model from aviation, where high-stakes teams stay
+      safe through discipline rather than heroics. These are the principles I
+      bring to engineering organisations.
+    </p>
+    <Operate />
+  </Section>
+
+  <Section id="tools" label="Resources" title="Leader's Tools">
+    <p class="section-intro fade-in">
+      Books, methods, and frameworks that shaped how I lead. A living collection —
+      I add to it as I discover things that work.
+    </p>
+    <h3 class="subhead fade-in">📚 Books</h3>
+    <ToolsGrid items={books} />
+    <h3 class="subhead fade-in">🛠️ Methods & Frameworks</h3>
+    <ToolsGrid items={methods} />
+  </Section>
+
+  <Section id="writing" label="Writing" title="My Book">
+    <div class="card fade-in">
+      <div class="card-title">{book.title}</div>
+      <div class="card-subtitle">Published {book.year}</div>
+      <p>{book.blurb}</p>
+      <a href={book.link} class="btn btn-accent" target="_blank" rel="noopener">
+        {book.linkLabel} →
+      </a>
+    </div>
+  </Section>
+
+  <Section id="podcast" label="Podcast" title="Tech Rōnins">
+    <span class="archived-badge fade-in">Archived · 2021–2023</span>
+    <p class="section-intro fade-in">
+      Decoding technical leadership, culture, and innovation. Co-hosted with
+      Pierre Feray-Ferrand. The show is on hiatus, but the back catalogue lives on.
+    </p>
+    <PodcastTopics />
+    <p style="margin-top:2.5rem;" class="fade-in">
+      <a
+        href="https://creators.spotify.com/pod/profile/tech-ronins"
+        class="btn"
+        target="_blank"
+        rel="noopener"
+      >
+        🎧 Listen on Spotify
+      </a>
+    </p>
+  </Section>
+
+  <Section id="contact" label="Connect" title="Get in Touch">
+    <p class="section-intro fade-in">
+      Always happy to chat about engineering leadership, crypto, or what's
+      playing on your playlist.
+    </p>
+    <SocialLinks />
+  </Section>
+
+  <Footer />
+</BaseLayout>

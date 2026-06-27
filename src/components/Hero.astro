@@ -1,0 +1,24 @@
+---
+import { site } from '../data/site';
+const { hero, name } = site;
+const [first, ...rest] = name.split(' ');
+---
+
+<section class="hero" id="top">
+  <div class="container">
+    <img
+      src="/profile.jpg"
+      alt={`Portrait of ${name}, ${hero.role}`}
+      class="hero-img fade-in"
+      width="116"
+      height="116"
+    />
+    <h1 class="fade-in">{first} <span class="accent">{rest.join(' ')}</span></h1>
+    <p class="tagline fade-in">
+      <strong style="color:var(--text);font-weight:600;">{hero.role}.</strong>
+      {' '}{hero.tagline}
+    </p>
+    <p class="location fade-in">📍 {hero.location}</p>
+    <a href="#journey" class="scroll-hint fade-in">↓ Explore</a>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+---
+import { socials } from '../data/socials';
+---
+
+<div class="social-links fade-in">
+  {
+    socials.map((s) => (
+      <a
+        href={s.href}
+        class="social-link"
+        target={s.href.startsWith('http') ? '_blank' : undefined}
+        rel={s.href.startsWith('http') ? 'noopener' : undefined}
+      >
+        {s.emoji} {s.label}
+      </a>
+    ))
+  }
+</div>

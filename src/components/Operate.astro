@@ -1,0 +1,27 @@
+---
+import { operate, mantras } from '../data/values';
+---
+
+<div class="values fade-in">
+  {
+    operate.map((p) => (
+      <div class="value-item">
+        <div class="value-icon">{p.icon}</div>
+        <h4>{p.title}</h4>
+        <p>{p.body}</p>
+      </div>
+    ))
+  }
+</div>
+
+<h3 class="subhead fade-in">Mantras</h3>
+<div class="values fade-in">
+  {
+    mantras.map((m) => (
+      <div class="value-item">
+        <div class="value-icon">{m.icon}</div>
+        <h4>{m.title}</h4>
+      </div>
+    ))
+  }
+</div>

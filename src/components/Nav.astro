@@ -1,0 +1,18 @@
+---
+const links = [
+  { href: '#journey', label: 'Journey' },
+  { href: '#operate', label: 'How I Operate' },
+  { href: '#tools', label: 'Tools' },
+  { href: '#writing', label: 'Writing' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">JD</a>
+    <ul class="nav-links">
+      {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+    </ul>
+  </div>
+</nav>

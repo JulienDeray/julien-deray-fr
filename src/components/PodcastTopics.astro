@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+
+const topics = (await getCollection('podcastTopics')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<div class="podcast-topics fade-in">
+  {
+    topics.map(({ data }) => (
+      <div class="topic-card">
+        <h4>{data.emoji} {data.title}</h4>
+        <p>{data.blurb}</p>
+      </div>
+    ))
+  }
+</div>
