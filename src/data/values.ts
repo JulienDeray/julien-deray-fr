@@ -7,6 +7,7 @@ export interface Principle {
 export interface Mantra {
   icon: string;
   title: string;
+  quote?: string;
 }
 
 // "How I Operate" — aviation-inspired operational discipline, the signature thread.

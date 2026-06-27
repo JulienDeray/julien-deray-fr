@@ -313,6 +313,10 @@ nav {
   line-height: 1.5;
 }
 
+.value-quote {
+  font-style: italic;
+}
+
 /* ── Tools grid ──────────────────────────── */
 
 .tools-grid {

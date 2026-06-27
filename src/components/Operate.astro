@@ -21,6 +21,7 @@ import { operate, mantras } from '../data/values';
       <div class="value-item">
         <div class="value-icon">{m.icon}</div>
         <h4>{m.title}</h4>
+        {m.quote && <p class="value-quote">{m.quote}</p>}
       </div>
     ))
   }
